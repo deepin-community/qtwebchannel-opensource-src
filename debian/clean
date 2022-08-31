@@ -1,0 +1,6 @@
+doc/
+examples/webchannel/chatclient-html/qwebchannel.js
+examples/webchannel/nodejs/qwebchannel.js
+examples/webchannel/qwclient/qwebchannel.js
+src/webchannel/QtWebChannel.version.in
+test_root/

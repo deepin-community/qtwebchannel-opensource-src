@@ -1,0 +1,108 @@
+Source: qtwebchannel-opensource-src
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Uploaders: Deepin Packages Builder <packages@deepin.org>
+Section: libs
+Priority: optional
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13),
+               libqt5websockets5-dev (>= 5.15.3~),
+               pkg-kde-tools,
+               qml-module-qttest (>= 5.15.3~),
+               qtbase5-dev (>= 5.15.3~),
+               qtbase5-private-dev (>= 5.15.3~),
+               qtdeclarative5-dev (>= 5.15.3~)
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.3~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.3~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.3~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.3~) <!nodoc>,
+                     qtwebsockets5-doc-html (>= 5.15.3~) <!nodoc>
+Standards-Version: 4.6.0
+Homepage: https://doc.qt.io/qt-5/qtwebchannel-index.html
+
+Package: qtwebchannel5-doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: ${misc:Depends}
+Description: Web communication library for Qt - Documentation
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the documentation for QtWebChannel.
+
+Package: qtwebchannel5-doc-html
+Build-Profiles: <!nodoc>
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: ${misc:Depends}
+Description: Web communication library for Qt - HTML Documentation
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the HTML documentation for QtWebChannel.
+
+Package: libqt5webchannel5-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libqt5webchannel5 (= ${binary:Version}),
+         qtbase5-dev,
+         qtdeclarative5-dev,
+         ${misc:Depends}
+Description: Web communication library for Qt - development files
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the development files needed to build Qt 5 applications
+ using the QtWebChannel library.
+
+Package: qtwebchannel5-examples
+Architecture: any
+Multi-Arch: same
+Depends: libqt5webchannel5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: nodejs (>= 6.11.2~dfsg-1~) [!armel !powerpc]
+Pre-Depends: ${misc:Pre-Depends}
+Description: Web communication library for Qt - Examples
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the examples for Qt's WebChannel submodule. Be sure to
+ read README.Debian before trying to run them.
+
+Package: libqt5webchannel5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Web communication library for Qt
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the QtWebChannel libraries.
+
+Package: qml-module-qtwebchannel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Web communication library for Qt - QML module
+ Qt WebChannel enables peer-to-peer communication between the host (QML/C++
+ application) and the client (HTML/JavaScript application). The transport
+ mechanism is supported out of the box by the two popular web engines, Qt
+ WebKit 2 and Qt WebEngine.
+ .
+ This package contains the WebChannel QML module for QtDeclarative.

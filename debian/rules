@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+include /usr/share/dpkg/default.mk
+
+export QT_SELECT := qt5
+
+%:
+	dh $@ --with pkgkde_symbolshelper
+
+override_dh_auto_configure:
+	dh_auto_configure -- QT_BUILD_PARTS+=tests
+
+override_dh_auto_build-indep:
+	dh_auto_build -- docs
+
+override_dh_auto_install-arch:
+	dh_auto_install
+
+	# Link duplicate files
+	ln -sf ../qwclient/qwebchannel.js debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/examples/webchannel/chatclient-qml/qwebchannel.js
+	ln -sf ../qwclient/qwebchannel.js debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/examples/webchannel/standalone/qwebchannel.js
+	ln -sf ../qwclient/qwebchannel.js debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/examples/webchannel/nodejs/qwebchannel.js
+
+	# Reproducible builds: remove build path from the prl file.
+	sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libQt5WebChannel.prl
+
+override_dh_auto_test-arch:
+	$(MAKE) install -Csrc/imports INSTALL_ROOT=$(CURDIR)/test_root
+	dh_auto_test --no-parallel -- QT_QPA_PLATFORM=minimal QML2_IMPORT_PATH=$(CURDIR)/test_root/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/qml
+
+override_dh_auto_test-indep:
+
+override_dh_auto_install-indep:
+	make INSTALL_ROOT=$(CURDIR)/debian/tmp install_docs

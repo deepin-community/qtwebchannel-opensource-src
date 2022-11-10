@@ -1,3 +1,3 @@
-usr/lib/*/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
-usr/lib/*/qt5/qml/QtWebChannel/plugins.qmltypes
-usr/lib/*/qt5/qml/QtWebChannel/qmldir
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/QtWebChannel/plugins.qmltypes
+usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/QtWebChannel/qmldir

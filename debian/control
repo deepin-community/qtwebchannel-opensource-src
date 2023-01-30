@@ -5,17 +5,17 @@ Section: libs
 Priority: optional
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13),
-               libqt5websockets5-dev (>= 5.15.7~),
+               libqt5websockets5-dev (>= 5.15.8~),
                pkg-kde-tools,
-               qml-module-qttest (>= 5.15.7~),
-               qtbase5-dev (>= 5.15.7~),
-               qtbase5-private-dev (>= 5.15.7~),
-               qtdeclarative5-dev (>= 5.15.7~)
-Build-Depends-Indep: qdoc-qt5 (>= 5.15.7~) <!nodoc>,
-                     qhelpgenerator-qt5 (>= 5.15.7~) <!nodoc>,
-                     qtattributionsscanner-qt5 (>= 5.15.7~) <!nodoc>,
-                     qtbase5-doc-html (>= 5.15.7~) <!nodoc>,
-                     qtwebsockets5-doc-html (>= 5.15.7~) <!nodoc>
+               qml-module-qttest (>= 5.15.8~),
+               qtbase5-dev (>= 5.15.8~),
+               qtbase5-private-dev (>= 5.15.8~),
+               qtdeclarative5-dev (>= 5.15.8~)
+Build-Depends-Indep: qdoc-qt5 (>= 5.15.8~) <!nodoc>,
+                     qhelpgenerator-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtattributionsscanner-qt5 (>= 5.15.8~) <!nodoc>,
+                     qtbase5-doc-html (>= 5.15.8~) <!nodoc>,
+                     qtwebsockets5-doc-html (>= 5.15.8~) <!nodoc>
 Standards-Version: 4.6.0
 Homepage: https://doc.qt.io/qt-5/qtwebchannel-index.html
 

@@ -1,3 +1,9 @@
+qtwebchannel-opensource-src (5.15.8-1+dde) UNRELEASED; urgency=medium
+
+  * New upstream release (5.15.8).
+
+ -- Lu YaNing <luyaning@uniontech.com>  Mon, 30 Jan 2023 15:30:55 +0800
+
 qtwebchannel-opensource-src (5.15.7-1+dde) unstable; urgency=medium
 
   * New upstream release (5.15.7).
